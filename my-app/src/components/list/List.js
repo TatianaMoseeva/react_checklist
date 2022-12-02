@@ -3,22 +3,24 @@ import ListItem from '../list-item/ListItem';
 import "./List.css";
 
 
-function List({tasks}) {
+function List({tasks, markAsDone}) {
 
     const items = tasks.map(task => {
         return  <ListItem
                     key = {task.id}
+                    id = {task.id}
                     desc = {task.desc}
                     date = {task.date}
-                    done = {task.done}
-                />
-    })
+                    isDone = {task.isDone}
+                    markAsDone = {markAsDone}
+                />;
+    });
 
-	return <div className="list">
+	return  <div className="list">
                 <ul className="list-group">
                     {items}
                 </ul>
-        </div>
+            </div>
 }
 
 export default List;
