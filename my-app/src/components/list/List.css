@@ -1,0 +1,18 @@
+.list {
+    padding-top: 20px;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.done {
+    text-decoration: line-through;
+}
+
+.fas {
+    margin-left: 20px;
+    color: #bd80d1;
+}
+
+.fas:hover {
+    color:  #82329c;
+}

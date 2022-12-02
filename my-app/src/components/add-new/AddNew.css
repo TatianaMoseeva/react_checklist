@@ -1,0 +1,12 @@
+.add_new {
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 80%;
+}
+
+.btn-custom {
+    background-color: #6b2980;
+}
+.btn-custom:hover {
+    background-color: #82329c;
+}
