@@ -9,11 +9,24 @@ function id() {
 	return nanoid();
 }
 
+function addDate (year, month, day) {
+    let today = new Date();
+    let posted = new Date(year, month-1, day);
+    let diff = Math.floor((today - posted) / (1000 * 60 * 60 * 24));
+    if (diff === 0) {
+        return 'today'
+    } if (diff === 1) {
+        return diff + ' day ago'
+    } else {
+        return diff + ' days ago'
+    }
+}
+
 const initData = [
-    {id: id(), desc: 'Make a mess in the kitchen by creating snow angels in flour', date: '2 days ago', isDone: false, isEdit: false},
-    {id: id(), desc: 'Rearrange all the furniture overnight', date: '5 days ago', isDone: false, isEdit: false},
-    {id: id(), desc: 'Park the car in the middle of the garden', date: '3 days ago', isDone: false, isEdit: false},
-    {id: id(), desc: 'Have a marshmallow snowball fight with other soft toys', date: '3 days ago', isDone: false, isEdit: false}
+    {id: id(), desc: 'Make a mess in the kitchen by creating snow angels in flour', date: addDate(2022, 11, 28), isDone: false, isEdit: false},
+    {id: id(), desc: 'Rearrange all the furniture overnight', date: addDate(2022, 12, 1), isDone: false, isEdit: false},
+    {id: id(), desc: 'Park the car in the middle of the garden', date: addDate(2022, 12, 2), isDone: false, isEdit: false},
+    {id: id(), desc: 'Have a marshmallow snowball fight with other soft toys', date: addDate(2022, 12, 3), isDone: false, isEdit: false}
 ]
 
 function App() {
@@ -62,3 +75,6 @@ function App() {
 }
 
 export default App;
+
+
+
