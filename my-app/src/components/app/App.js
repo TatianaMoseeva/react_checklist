@@ -42,10 +42,22 @@ function App() {
         setTasks(tasks.filter(task => task.id !== id));
     }
 
+    function addTask(desc, date) {
+        let newTask = {
+            id: id(),  
+            desc: desc,
+            date: 'today'
+        };
+        if (newTask.desc.length > 0 ) {
+            setTasks([...tasks, newTask]);
+        }
+    }
+
+
 	return <div className='container'>
 		<Header />
         <List tasks={tasks} removeItem={removeItem} toggleMode={toggleMode} editTask={editTask}/>
-        <AddNew />
+        <AddNew addTask={addTask}/>
 	</div>;
 }
 
