@@ -20,7 +20,14 @@ function App() {
 
     const [tasks, setTasks] = useState(initData);
 
-
+    function editTask (id, e) {
+        setTasks(tasks.map(task => {
+            if (task.id === id) {
+                return {...task, desc: e.value}
+            } 
+            return task;
+        }));
+    }
 
     function toggleMode (id, prop) {
         setTasks(tasks.map(task => {
@@ -37,7 +44,7 @@ function App() {
 
 	return <div className='container'>
 		<Header />
-        <List tasks={tasks} removeItem={removeItem} toggleMode={toggleMode} />
+        <List tasks={tasks} removeItem={removeItem} toggleMode={toggleMode} editTask={editTask}/>
         <AddNew />
 	</div>;
 }

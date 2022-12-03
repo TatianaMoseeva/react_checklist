@@ -3,7 +3,7 @@ import ListItem from '../list-item/ListItem';
 import "./List.css";
 
 
-function List({tasks, removeItem, toggleMode}) {
+function List({tasks, removeItem, toggleMode, editTask}) {
 
     const items = tasks.map(task => {
         return  <ListItem
@@ -15,6 +15,7 @@ function List({tasks, removeItem, toggleMode}) {
                     removeItem = {removeItem}
                     isEdit = {task.isEdit}
                     toggleMode = {toggleMode}
+                    editTask={editTask}
                 />;
     });
 
