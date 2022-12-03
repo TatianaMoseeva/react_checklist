@@ -22,13 +22,13 @@ function App() {
 
 
 
-    function markAsDone (id) {
+    function toggleMode (id, prop) {
         setTasks(tasks.map(task => {
             if(task.id === id) {
-                task.isDone = !task.isDone;
+                return {...task, [prop]: !task[prop]};
             }
             return task;
-        }))
+        }));
     }
 
     function removeItem(id) {
@@ -37,7 +37,7 @@ function App() {
 
 	return <div className='container'>
 		<Header />
-        <List tasks={tasks} markAsDone={markAsDone} removeItem={removeItem} />
+        <List tasks={tasks} removeItem={removeItem} toggleMode={toggleMode} />
         <AddNew />
 	</div>;
 }
