@@ -3,7 +3,7 @@ import ListItem from '../list-item/ListItem';
 import "./List.css";
 
 
-function List({tasks, markAsDone}) {
+function List({tasks, markAsDone, removeItem}) {
 
     const items = tasks.map(task => {
         return  <ListItem
@@ -13,6 +13,7 @@ function List({tasks, markAsDone}) {
                     date = {task.date}
                     isDone = {task.isDone}
                     markAsDone = {markAsDone}
+                    removeItem = {removeItem}
                 />;
     });
 

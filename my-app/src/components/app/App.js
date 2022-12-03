@@ -29,10 +29,13 @@ function App() {
         }))
     }
 
+    function removeItem(id) {
+        setTasks(tasks.filter(task => task.id !== id));
+    }
 
 	return <div className='container'>
 		<Header />
-        <List tasks={tasks} markAsDone={markAsDone}/>
+        <List tasks={tasks} markAsDone={markAsDone} removeItem={removeItem}/>
         <AddNew />
 	</div>;
 }
