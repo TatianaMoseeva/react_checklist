@@ -46,7 +46,7 @@ function App() {
         let newTask = {
             id: id(),  
             desc: desc,
-            date: 'today'
+            date: date
         };
         if (newTask.desc.length > 0 ) {
             setTasks([...tasks, newTask]);
