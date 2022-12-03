@@ -14,6 +14,7 @@ function List({tasks, markAsDone, removeItem}) {
                     isDone = {task.isDone}
                     markAsDone = {markAsDone}
                     removeItem = {removeItem}
+                    isEdit = {task.isEdit}
                 />;
     });
 
