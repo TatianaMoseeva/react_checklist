@@ -11,7 +11,7 @@ function id() {
 
 function addDate (year, month, day) {
     let today = new Date();
-    let posted = new Date(year, month-1, day);
+    let posted = new Date(year, month, day);
     let diff = Math.floor((today - posted) / (1000 * 60 * 60 * 24));
     if (diff === 0) {
         return 'today'
@@ -23,10 +23,10 @@ function addDate (year, month, day) {
 }
 
 const initData = [
-    {id: id(), desc: 'Make a mess in the kitchen by creating snow angels in flour', date: addDate(2022, 11, 28), isDone: false, isEdit: false},
-    {id: id(), desc: 'Rearrange all the furniture overnight', date: addDate(2022, 12, 1), isDone: false, isEdit: false},
-    {id: id(), desc: 'Park the car in the middle of the garden', date: addDate(2022, 12, 2), isDone: false, isEdit: false},
-    {id: id(), desc: 'Have a marshmallow snowball fight with other soft toys', date: addDate(2022, 12, 3), isDone: false, isEdit: false}
+    {id: id(), desc: 'Make a mess in the kitchen by creating snow angels in flour', date: addDate(2022, 10, 28), isDone: false, isEdit: false},
+    {id: id(), desc: 'Rearrange all the furniture overnight', date: addDate(2022, 11, 1), isDone: false, isEdit: false},
+    {id: id(), desc: 'Park the car in the middle of the garden', date: addDate(2022, 11, 2), isDone: false, isEdit: false},
+    {id: id(), desc: 'Have a marshmallow snowball fight with other soft toys', date: addDate(2022, 11, 3), isDone: false, isEdit: false}
 ]
 
 function App() {
@@ -70,7 +70,7 @@ function App() {
 	return <div className='container'>
 		<Header />
         <List tasks={tasks} removeItem={removeItem} toggleMode={toggleMode} editTask={editTask}/>
-        <AddNew addTask={addTask}/>
+        <AddNew addTask={addTask} addDate={addDate}/>
 	</div>;
 }
 
